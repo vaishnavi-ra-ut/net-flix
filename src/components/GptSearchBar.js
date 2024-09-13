@@ -1,16 +1,18 @@
 import { useRef } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai"; // Import the library
 import { API_OPTIONS } from "../utils/constants"
-
+import { useDispatch } from "react-redux";
+import { addGptMovies} from "../utils/gptSlice"
 
 const GptSearchBar = () => {
   const searchText = useRef(null);
+  const dispatch=useDispatch();
 
   // Initialize the Google Generative AI client with your API key
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
 
-  const searchResults = async () =>{
-    const data = await fetch('https://api.themoviedb.org/3/search/movie?query=raaz&include_adult=false&language=en-US&page=1', API_OPTIONS);
+  const searchResults = async (movie) =>{
+    const data = await fetch('https://api.themoviedb.org/3/search/movie?query='+movie+'&include_adult=false&language=en-US&page=1', API_OPTIONS);
     
     const json = await data.json();
 
@@ -32,6 +34,10 @@ const GptSearchBar = () => {
 
       const tmdbResults = await Promise.all(promiseArray);
       console.log(tmdbResults);
+
+      dispatch(
+        addGptMovies({ movieNames: gptMovies, movieResults: tmdbResults })
+      );
   };
 
   return (
@@ -43,7 +49,7 @@ const GptSearchBar = () => {
         <div className="relative w-6/12 ml-[24%]">
           <input
             ref={searchText}
-            className="border border-black rounded-2xl py-1 px-4 pr-10 bg-black bg-opacity-65 text-center text-white font-semibold w-full placeholder-gray-400"
+            className="border border-black rounded-2xl py-1 px-4 pr-10 bg-black bg-opacity-85 text-center text-white font-semibold w-full placeholder-gray-400"
             type="text"
             placeholder="What's On Your Mind ?"
           />

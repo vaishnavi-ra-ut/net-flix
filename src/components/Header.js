@@ -47,7 +47,7 @@ const Header = () => {
   } , [])
 
   return (
-    <div className="flex justify-end bg-gradient-to-b from-black absolute w-screen">
+    <div className="flex justify-end bg-gradient-to-b from-black fixed z-20 top-0 w-screen">
       <div className="p-6 z-10 flex ">
           <svg
             viewBox="0 0 111 30"

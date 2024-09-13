@@ -8,4 +8,4 @@ export const API_OPTIONS = {
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";
 
-export const OpenAI_key = "AIzaSyDyxqGbSX2kWBcwYBr9N6jHvGNUNc913gY";
+export const OpenAI_key = process.env.REACT_APP_GEMINI_API_KEY;
