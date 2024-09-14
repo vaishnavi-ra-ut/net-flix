@@ -23,7 +23,7 @@ const GptSearchBar = () => {
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query: " +
       searchText.current.value +
-      ". Only give me names of 7 movies, comma-separated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya , la la land , titanic";
+      ". Only give me names of 4 movies, comma-separated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya , la la land , titanic";
 
       // Use the model to generate content
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });

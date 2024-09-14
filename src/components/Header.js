@@ -10,11 +10,11 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((store)=>store.user);
+  //const user = useSelector((store)=>store.user);
   const showGpt = useSelector((store)=>store.gpt.showGptSearch);
 
   const handleGPTSearch=()=>{
-    dispatch(toggleGpt())
+    dispatch(toggleGpt());
 }
 
   const handleSignOut =()=>{
@@ -64,7 +64,7 @@ const Header = () => {
           />
           </g>
         </svg>
-        <button className="font-bold mt-3 pr-4 text-white rounded-md px-1 h-1" onClick={handleGPTSearch}>
+        <button className="font-bold mt-3 pr-4 text-white rounded-md px-1 h-1 z-40" onClick={handleGPTSearch}>
           {showGpt ? "Home" : "GPTSearch"}
         </button>
         <div className="z-10 my-[1%] mr-[1%] mt-2 flex">
