@@ -1,3 +1,4 @@
+import React from "react";
 import { useRef } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai"; // Import the library
 import { API_OPTIONS } from "../utils/constants"
@@ -7,7 +8,7 @@ import { addGptMovies} from "../utils/gptSlice"
 const GptSearchBar = () => {
   const searchText = useRef(null);
   const dispatch=useDispatch();
-
+  console.log("gptsearchbody");
   // Initialize the Google Generative AI client with your API key
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
 

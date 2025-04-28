@@ -1,6 +1,8 @@
+import React from "react";
 import MovieCard from "./MovieCard"
 
 const MovieList = ({ title, movies }) => {
+  console.log("movielist");
     return (
       <div className="ml-7">
         <h1 className="text-2xl font-semibold py-2 text-white">{title}</h1>

@@ -1,5 +1,7 @@
+import React from "react";
 import {IMG_CDN_URL} from "../utils/constants"
 const MovieCard = ({posterPath}) => {
+  console.log("moviecard");
   if (!posterPath) return null;
   return (
     <div className="w-36 m-2 overflow-hidden" >

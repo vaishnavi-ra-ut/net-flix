@@ -1,3 +1,4 @@
+import React from "react";
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { validateData } from "../utils/validate";
@@ -8,7 +9,7 @@ import { auth } from "../utils/firebase"; // Ensure this is correct
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
-  
+  console.log("login");
   // const navigate = useNavigate();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -16,6 +17,7 @@ const Login = () => {
   const toggle = () => {
     setSignIn(!signIn);
   };
+
 
   const handleClick = (e) => {
     e.preventDefault();

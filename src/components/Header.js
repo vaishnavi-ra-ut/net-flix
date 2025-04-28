@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom";
@@ -7,7 +8,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { toggleGpt } from "../utils/gptSlice";
 
 const Header = () => {
-
+  console.log("header");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //const user = useSelector((store)=>store.user);
