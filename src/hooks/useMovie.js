@@ -15,20 +15,15 @@ const useMovieTrailer = (movieId) => {
 
     try {
       const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`;
-      console.log("Fetching from URL:", apiUrl);
 
       const response = await fetch(apiUrl, API_OPTIONS);
       const json = await response.json();
-
-      console.log("📺 API Response:", json);
 
       if (json.results?.length > 0) {
         const filterData = json.results.filter(
           (video) => video.type === "Trailer" && video.site === "YouTube"
         );
         const trailer = filterData.length ? filterData[0] : json.results[0];
-
-        console.log("✅ Trailer Found:", trailer);
         dispatch(addTrailerVideo(trailer));
       } else {
         console.warn("⚠️ No trailer found for movie ID:", movieId);

@@ -10,6 +10,7 @@
     "autoprefixer": "^10.4.21",
     "caniuse-lite": "^1.0.30001705",
     "firebase": "^10.13.1",
+    "lucide-react": "^0.525.0",
     "openai": "^4.60.0",
     "postcss": "^8.5.3",
     "react": "^18.3.1",
@@ -35,7 +36,9 @@
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "os-browserify": "^0.3.0",
     "parcel": "^2.13.3",
+    "path-browserify": "^1.0.1",
     "process": "^0.11.10",
     "tailwindcss": "^3.4.17"
   }

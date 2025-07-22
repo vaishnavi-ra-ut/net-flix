@@ -3,7 +3,6 @@ import GptSearchBar from "./GptSearchBar"
 import GptSuggestions from "./GptSuggestions"
 
 const GPTSearch = () => {
-  console.log("gptsearch");
   return (
         <>
           <div className="mt-[170px]">

@@ -2,15 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS to hide scrollbar */
-.hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
-  }
-  
-  .hide-scrollbar {
-    -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer and Edge */
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
-  }
-  body{
-    overflow-x: hidden;
-  }
+/* In index.css or a global CSS file */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}

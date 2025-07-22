@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 const Home = () => {
 
   useNowPlaying();
-  console.log("home");
   const showGpt = useSelector((store)=>store.gpt.showGptSearch);
   
   return (
